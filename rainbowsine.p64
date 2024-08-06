@@ -1,0 +1,59 @@
+picotron cartridge // www.picotron.net
+version 2
+
+:: .info.pod
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjMzOjQwIixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzo0NyIscnVudGltZT04LHdvcmtzcGFjZXM9e3tsb2NhdGlvbj0ibWFpbi5sdWEj
+MSIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlvbj0iZ2Z4LzAuZ2Z4Iix3b3Jrc3BhY2VfaW5k
+ZXg9Mn0se2xvY2F0aW9uPSJtYXAvMC5tYXAiLHdvcmtzcGFjZV9pbmRleD0zfSx7bG9jYXRpb249
+InNmeC8wLnNmeCIsd29ya3NwYWNlX2luZGV4PTR9fV1dbHo0AAQAAAADAAAAMG5pbA==
+:: gfx/
+:: gfx/.info.pod
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjI4OjI1Iixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzo0NyJdXWx6NAAEAAAAAwAAADBuaWw=
+:: gfx/0.gfx
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjI4OjI2Iixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzozOSIscmV2aXNpb249MTNdXWx6NAB_AAAAEjEAAPMhe1swXT17Ym1wPXB4dQBD
+IBAQBPBWBxAHwBfQF8AHEAfwVixmbGFncz0wLHBhbl94CADLeT0wLHpvb209OH0sPgAf8DEA----
+------------------------------------------------------------11BtPTh9fQ==
+:: map/
+:: map/.info.pod
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjI4OjI1Iixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzo0NyJdXWx6NAAEAAAAAwAAADBuaWw=
+:: map/0.map
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjI4OjI2Iixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzozOSIscmV2aXNpb249MTFdXWx6NABaAAAASxAAAPAIe3tibXA9dXNlcmRhdGEo
+ImkxNiIsMzIDAC8iMAEA--------------------_6EiKSxwYW5feD0wCADSeT0wLHRpbGVfaD0x
+NgoAEHcKAIB6b29tPTF9fQ==
+:: sfx/
+:: sfx/.info.pod
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjI4OjI1Iixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzo0NyJdXWx6NAAEAAAAAwAAADBuaWw=
+:: sfx/0.sfx
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA4LTA2IDIwOjI4OjI2Iixtb2RpZmllZD0iMjAyNC0w
+OC0wNiAyMDozMzo0MCIscmV2aXNpb249MTBdXWx6NACgAAAACwoAAP8wcHh1AAMoAAAEAAQPQBAC
+DgABoAEgAqAOAA8QAA3wygECA0APD5AEBQYHQAyQCAkKC0AMkA8MDw0PDgxADPD-AQDr-yeqARAG
+DyAQASABIAHwAAIQAg4QASAPISABMA9A8MMPKA--8MYP_AoP-w_AD-cPDQHwCQEQBg4wAP------
+vR--AQCsz8gPQAAPEED--7Dw-wEA-_pQ-----yk=
+:: main.lua
+--[[pod_format="raw",created="2024-08-06 20:28:26",modified="2024-08-06 20:33:39",revision=16]]
+window(128, 128)
+
+function _draw()
+	cls()
+	pval=0
+	for l=1,8 do
+	for i=-1,137 do
+		val=sin(i/l/10-time())*20
+		line(
+			i-l,
+			64-pval+l*2,
+			i-l+1,
+			64-val+l*2,
+			7+l
+		)
+		pval=val
+	end
+	end
+end
+:: [eoc]
